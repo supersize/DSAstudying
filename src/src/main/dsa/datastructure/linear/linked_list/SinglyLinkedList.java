@@ -74,11 +74,13 @@ public class SinglyLinkedList {
         }
 
         Node prevNode = search(index - 1);
-        Node nextNode = search(index + 1);
-        prevNode.next = new Node(nextNode, value);
+        Node nextNode = prevNode.next;
+
+        Node newNode = new Node(nextNode, value);
+
+        size++;
+        prevNode.next = newNode;
     }
-
-
 
 
     /*
